@@ -21,9 +21,9 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  { name: "SERVICEAGENT", image: "/projects/project-1-serviceagent.png", href: "#" },
-  { name: "MAILU", image: "/projects/project-2-mailu.png", href: "#" },
-  { name: "PELO A PELO", image: "/projects/project-3-peloapelo.png", href: "#" },
+  { name: "SERVICEAGENT", image: "/projects/fondo-serviceagente.jpg", href: "#" },
+  { name: "MAILU", image: "/projects/fondo-mailu.jpg", href: "#" },
+  { name: "PELO A PELO", image: "/projects/fondo-peloapelo.jpg", href: "#" },
 ];
 
 export const stackSkills: string[] = [
