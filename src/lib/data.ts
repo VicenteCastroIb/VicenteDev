@@ -3,15 +3,16 @@
 // easier to read and lets content be updated without touching JSX.
 
 export type NavLink = {
-  label: string;
+  /** Key into the `nav` section of the i18n dictionary (see src/lib/i18n.tsx). */
+  key: "projects" | "about" | "skills" | "contact";
   href: string;
 };
 
 export const navLinks: NavLink[] = [
-  { label: "PROYECTOS", href: "#projects" },
-  { label: "SOBRE MI", href: "#about" },
-  { label: "SKILLS", href: "#skills" },
-  { label: "CONTACTO", href: "#contact" },
+  { key: "projects", href: "#projects" },
+  { key: "about", href: "#about" },
+  { key: "skills", href: "#skills" },
+  { key: "contact", href: "#contact" },
 ];
 
 export type Project = {
@@ -63,40 +64,44 @@ export const certifications: string[] = [
 ];
 
 export type FooterLink = {
-  label: string;
+  /** Key into the matching column's `*Links` object in the i18n dictionary. */
+  key: string;
   href: string;
 };
 
-export const footerColumns: { heading: string; links: FooterLink[] }[] = [
+export const footerColumns: { headingKey: "aboutHeading" | "skillsHeading" | "projectsHeading"; linksKey: "aboutLinks" | "skillsLinks" | "projectsLinks"; links: FooterLink[] }[] = [
   {
-    heading: "SOBRE MÍ",
+    headingKey: "aboutHeading",
+    linksKey: "aboutLinks",
     links: [
-      { label: "Historia", href: "#about" },
-      { label: "Educación", href: "#about" },
-      { label: "Certificaciones", href: "#skills" },
+      { key: "story", href: "#about" },
+      { key: "education", href: "#about" },
+      { key: "certifications", href: "#skills" },
     ],
   },
   {
-    heading: "SKILLS",
+    headingKey: "skillsHeading",
+    linksKey: "skillsLinks",
     links: [
-      { label: "Frontend", href: "#skills" },
-      { label: "Backend", href: "#skills" },
-      { label: "Bases de Datos", href: "#skills" },
+      { key: "frontend", href: "#skills" },
+      { key: "backend", href: "#skills" },
+      { key: "databases", href: "#skills" },
     ],
   },
   {
-    heading: "PROYECTOS",
+    headingKey: "projectsHeading",
+    linksKey: "projectsLinks",
     links: [
-      { label: "Service Agent", href: "#projects" },
-      { label: "Mailu", href: "#projects" },
-      { label: "Pelo a Pelo", href: "#projects" },
+      { key: "serviceAgent", href: "#projects" },
+      { key: "mailu", href: "#projects" },
+      { key: "peloApelo", href: "#projects" },
     ],
   },
 ];
 
+// No Instagram link — account not in use.
 export const socialLinks = [
   { label: "IN", ariaLabel: "LinkedIn", href: "https://www.linkedin.com/in/vicente-castro1" },
-  { label: "IG", ariaLabel: "Instagram", href: "#" },
   { label: "WA", ariaLabel: "WhatsApp", href: "#" },
 ] as const;
 
@@ -108,5 +113,4 @@ export const contact = {
     "https://mail.google.com/mail/?view=cm&fs=1&to=vicentecastroibarra@gmail.com",
   phoneDisplay: "+56 9 5633 3685",
   phoneHref: "tel:+56956333685",
-  location: "Presencial - Remoto - Chile",
 };
