@@ -26,7 +26,7 @@ export default function Skills() {
     <section
       id="skills"
       className="flex flex-col items-center gap-14 px-[clamp(20px,6vw,56px)] pt-[70px] pb-[90px]"
-      style={{ background: "linear-gradient(180deg, #000409, #17273C, #000409)" }}
+      style={{ background: "linear-gradient(180deg, #000409, #072347ff, #000409)" }}
     >
       <ChipGroup label="STACK PRINCIPAL" items={stackSkills} />
       <div className="h-px w-[146px] bg-white/20" />

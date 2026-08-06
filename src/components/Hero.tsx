@@ -30,7 +30,7 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(10,21,32,.5) 0%, rgba(10,21,32,.72) 55%, rgba(0,0,0,.92) 100%)",
+            "linear-gradient(180deg, rgba(10,21,32,.5) 40%, rgba(10,21,32,.72) 90%, rgba(0,0,0,.92) 100%)",
         }}
       />
 
@@ -54,7 +54,7 @@ export default function Hero() {
           onClick={scrollToProjects}
           className="mt-2 cursor-pointer rounded-[2px] border border-white/35 bg-transparent px-10 py-4 text-xs font-bold tracking-[3px] text-[#eaf2f5] transition-all duration-300 hover:scale-105 hover:border-accent hover:bg-accent hover:text-[#08141d] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[#08141d]"
         >
-          LEARN MORE
+          PROYECTOS
         </button>
 
         <button
