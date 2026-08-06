@@ -13,7 +13,7 @@ export default function Header() {
   const { locale, setLocale, t } = useLanguage();
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex h-[76px] items-center justify-between gap-6 border-b border-white/8 bg-[#000409] px-[clamp(20px,4vw,56px)] backdrop-blur-[10px]">
+    <header className="fixed inset-x-0 top-0 z-50 flex h-[76px] items-center justify-between gap-6 border-b border-white/8 bg-[#0a1520]/82 px-[clamp(20px,4vw,56px)] backdrop-blur-[10px]">
       <span className="flex-none font-[var(--font-sora)] text-sm font-semibold tracking-[2px] text-[#eaf2f5]/85 transition-colors duration-300 hover:text-accent">
         VICENTE CASTRO
       </span>
