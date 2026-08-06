@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import { projects, type Project } from "@/lib/data";
+import { projects, DEFAULT_PROJECT_IMAGE_POSITION, type Project } from "@/lib/data";
 
 function ProjectCard({ project }: { project: Project }) {
   return (
@@ -17,7 +17,8 @@ function ProjectCard({ project }: { project: Project }) {
         fill
         sizes="252px"
         quality={100}
-        className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-110 group-focus-visible:scale-110"
+        style={{ objectPosition: project.imagePosition ?? DEFAULT_PROJECT_IMAGE_POSITION }}
+        className="object-cover transition-transform duration-500 ease-out group-hover:scale-110 group-focus-visible:scale-110"
       />
       <div
         className="absolute inset-0"

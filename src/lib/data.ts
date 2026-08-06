@@ -18,11 +18,19 @@ export type Project = {
   name: string;
   image: string;
   href: string;
+  /**
+   * CSS `object-position` value for this card's background photo, e.g.
+   * "10% 50%" (horizontal% vertical%). Falls back to a shared default
+   * (see DEFAULT_PROJECT_IMAGE_POSITION) when omitted.
+   */
+  imagePosition?: string;
 };
+
+export const DEFAULT_PROJECT_IMAGE_POSITION = "10% 50%";
 
 export const projects: Project[] = [
   { name: "SERVICEAGENT", image: "/projects/fondo-serviceagente.jpg", href: "#" },
-  { name: "MAILU", image: "/projects/fondo-mailu.jpg", href: "#" },
+  { name: "MAILU", image: "/projects/fondo-mailu.jpg", href: "#", imagePosition: "0% 50%" },
   { name: "PELO A PELO", image: "/projects/fondo-peloapelo.jpg", href: "#" },
 ];
 
