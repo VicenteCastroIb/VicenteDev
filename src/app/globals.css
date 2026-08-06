@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #0a1520;
+  --color-ink: #eaf2f5;
+  --color-accent: #4dd0e1;
+  --color-quote: #b6adad;
+  --font-sora: var(--font-sora);
+  --font-inter: var(--font-inter);
+}
+
+/* Hexagon clip-path used by project cards. Kept as a CSS var (per the
+   original design tokens) so the shape can be swapped for a rounded
+   card by changing a single value if ever needed. */
+:root {
+  --card-clip: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-bounce-cue {
+  animation: bounce 2.2s ease-in-out infinite;
+}
+
+.hex-clip {
+  clip-path: var(--card-clip);
+}
