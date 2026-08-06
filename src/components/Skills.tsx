@@ -1,17 +1,20 @@
+import Reveal from "@/components/Reveal";
 import { stackSkills, certifications } from "@/lib/data";
+
+const CHIP_STAGGER_MS = 40;
+const CHIP_STAGGER_CAP_MS = 400;
 
 function ChipGroup({ label, items }: { label: string; items: string[] }) {
   return (
     <div className="flex flex-col items-center gap-10">
-      <div className="text-xs font-bold tracking-[4px] text-accent">{label}</div>
+      <Reveal className="text-xs font-bold tracking-[4px] text-accent">{label}</Reveal>
       <div className="flex max-w-[900px] flex-wrap justify-center gap-3.5">
-        {items.map((item) => (
-          <span
-            key={item}
-            className="rounded-[20px] border border-white/15 px-5 py-2.5 text-xs font-semibold tracking-[1.5px] text-[#eaf2f5]/80 transition-colors duration-200 hover:border-accent hover:text-accent"
-          >
-            {item}
-          </span>
+        {items.map((item, index) => (
+          <Reveal key={item} delay={Math.min(index * CHIP_STAGGER_MS, CHIP_STAGGER_CAP_MS)}>
+            <span className="inline-block cursor-default rounded-[20px] border border-white/15 px-5 py-2.5 text-xs font-semibold tracking-[1.5px] text-[#eaf2f5]/80 transition-all duration-200 hover:scale-105 hover:border-accent hover:text-accent active:scale-95">
+              {item}
+            </span>
+          </Reveal>
         ))}
       </div>
     </div>

@@ -9,7 +9,7 @@ const langToggles = [
 export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex h-[76px] items-center justify-between gap-6 border-b border-white/8 bg-[#0a1520]/82 px-[clamp(20px,4vw,56px)] backdrop-blur-[10px]">
-      <span className="flex-none font-[var(--font-sora)] text-sm font-semibold tracking-[2px] text-[#eaf2f5]/85">
+      <span className="flex-none font-[var(--font-sora)] text-sm font-semibold tracking-[2px] text-[#eaf2f5]/85 transition-colors duration-300 hover:text-accent">
         VICENTE CASTRO
       </span>
 
@@ -18,9 +18,10 @@ export default function Header() {
           <Link
             key={link.href}
             href={link.href}
-            className="border-b border-transparent pb-1 text-xs font-semibold tracking-[2px] text-[#eaf2f5]/75 transition-colors duration-200 hover:border-accent hover:text-accent"
+            className="group relative pb-1 text-xs font-semibold tracking-[2px] text-[#eaf2f5]/75 transition-colors duration-200 hover:text-accent focus-visible:text-accent focus-visible:outline-none"
           >
             {link.label}
+            <span className="absolute inset-x-0 -bottom-px h-px origin-left scale-x-0 bg-accent transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100" />
           </Link>
         ))}
       </nav>
@@ -31,7 +32,7 @@ export default function Header() {
             key={lang.code}
             href="#"
             aria-label={lang.label}
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-[10px] font-bold tracking-[0.5px] text-[#eaf2f5]/75 transition-colors duration-200 hover:border-accent hover:text-accent"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-[10px] font-bold tracking-[0.5px] text-[#eaf2f5]/75 transition-all duration-200 hover:scale-110 hover:border-accent hover:text-accent active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a1520]"
           >
             {lang.code}
           </a>
