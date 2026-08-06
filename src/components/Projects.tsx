@@ -27,7 +27,7 @@ function ProjectCard({ project, learnMoreLabel }: { project: Project; learnMoreL
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(10,21,32,.1) 0%, rgba(10,21,32,.8) 100%)",
+            "linear-gradient(180deg, hsla(210, 52%, 8%, 0.10) 0%, rgba(10,21,32,.8) 100%)",
         }}
       />
       <div
