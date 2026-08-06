@@ -16,7 +16,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[80vh] flex-col items-center justify-center px-[clamp(20px,6vw,50px)] pt-[150px] pb-[90px] text-center"
+      className="relative isolate flex min-h-[80vh] flex-col items-center justify-center px-[clamp(20px,6vw,50px)] pt-[150px] pb-[90px] text-center"
     >
       <Image
         src="/hero-photo.jpg"
