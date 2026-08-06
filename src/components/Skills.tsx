@@ -1,5 +1,8 @@
+"use client";
+
 import Reveal from "@/components/Reveal";
 import { stackSkills, certifications } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n";
 
 const CHIP_STAGGER_MS = 40;
 const CHIP_STAGGER_CAP_MS = 400;
@@ -22,15 +25,17 @@ function ChipGroup({ label, items }: { label: string; items: string[] }) {
 }
 
 export default function Skills() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="skills"
       className="flex flex-col items-center gap-14 px-[clamp(20px,6vw,56px)] pt-[70px] pb-[90px]"
       style={{ background: "linear-gradient(180deg, #000409, #072347ff, #000409)" }}
     >
-      <ChipGroup label="STACK PRINCIPAL" items={stackSkills} />
+      <ChipGroup label={t.skills.stack} items={stackSkills} />
       <div className="h-px w-[146px] bg-white/20" />
-      <ChipGroup label="CERTIFICACIONES" items={certifications} />
+      <ChipGroup label={t.skills.certs} items={certifications} />
     </section>
   );
 }

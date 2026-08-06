@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import { projects, type Project } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n";
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, learnMoreLabel }: { project: Project; learnMoreLabel: string }) {
   return (
     <Link
       href={project.href}
@@ -42,7 +43,7 @@ function ProjectCard({ project }: { project: Project }) {
           {project.name}
         </div>
         <div className="border border-white/50 px-[18px] py-2 text-[10px] font-bold tracking-[2px] text-white transition-all duration-300 group-hover:scale-105 group-hover:border-accent group-hover:bg-accent group-hover:text-[#08141d] group-focus-visible:border-accent group-focus-visible:bg-accent group-focus-visible:text-[#08141d]">
-          VER
+          {learnMoreLabel}
         </div>
       </div>
     </Link>
@@ -50,6 +51,8 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export default function Projects() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="projects"
@@ -58,17 +61,17 @@ export default function Projects() {
     >
       <Reveal className="mb-16 text-center">
         <div className="mb-3.5 text-xs font-bold tracking-[4px] text-accent">
-          EXPLORA MI TRABAJO
+          {t.projects.eyebrow}
         </div>
         <h2 className="m-0 font-[var(--font-sora)] text-[clamp(26px,4vw,38px)] font-bold text-white">
-          Proyectos &amp; Capacidades
+          {t.projects.title}
         </h2>
       </Reveal>
 
       <div className="flex max-w-[900px] flex-wrap justify-center gap-[26px]">
         {projects.map((project, index) => (
           <Reveal key={project.name} delay={index * 120}>
-            <ProjectCard project={project} />
+            <ProjectCard project={project} learnMoreLabel={t.projects.learnMore} />
           </Reveal>
         ))}
       </div>
