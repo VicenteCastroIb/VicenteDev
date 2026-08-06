@@ -16,6 +16,7 @@ function ProjectCard({ project }: { project: Project }) {
         alt={project.name}
         fill
         sizes="252px"
+        quality={100}
         className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-110 group-focus-visible:scale-110"
       />
       <div
