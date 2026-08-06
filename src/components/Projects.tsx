@@ -9,6 +9,8 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       href={project.href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="hex-clip group relative block h-[222px] w-[252px] shrink-0 overflow-hidden shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-[inset_0_0_0_1px_var(--color-accent)] focus-visible:-translate-y-1.5 focus-visible:shadow-[inset_0_0_0_1px_var(--color-accent)] focus-visible:outline-none"
     >
       <Image
@@ -16,7 +18,9 @@ function ProjectCard({ project }: { project: Project }) {
         alt={project.name}
         fill
         sizes="252px"
-        className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-110 group-focus-visible:scale-110"
+        quality={100}
+        style={{ objectPosition: project.imagePosition }}
+        className="object-cover transition-transform duration-500 ease-out group-hover:scale-110 group-focus-visible:scale-110"
       />
       <div
         className="absolute inset-0"
@@ -38,7 +42,7 @@ function ProjectCard({ project }: { project: Project }) {
           {project.name}
         </div>
         <div className="border border-white/50 px-[18px] py-2 text-[10px] font-bold tracking-[2px] text-white transition-all duration-300 group-hover:scale-105 group-hover:border-accent group-hover:bg-accent group-hover:text-[#08141d] group-focus-visible:border-accent group-focus-visible:bg-accent group-focus-visible:text-[#08141d]">
-          LEARN MORE
+          VER
         </div>
       </div>
     </Link>
@@ -50,7 +54,7 @@ export default function Projects() {
     <section
       id="projects"
       className="flex flex-col items-center px-[clamp(20px,6vw,56px)] pt-[110px] pb-[130px]"
-      style={{ background: "linear-gradient(180deg, #000000, #17273C, #000409)" }}
+      style={{ background: "linear-gradient(180deg, #000000, #072347ff, #000409)" }}
     >
       <Reveal className="mb-16 text-center">
         <div className="mb-3.5 text-xs font-bold tracking-[4px] text-accent">

@@ -41,7 +41,12 @@ export default function Footer() {
           <div className="mb-1.5 text-xs font-bold tracking-[2px] text-white">
             CONTACTO
           </div>
-          <a href={`mailto:${contact.email}`} className={linkClass}>
+          <a
+            href={contact.emailHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClass}
+          >
             {contact.email}
           </a>
           <a href={contact.phoneHref} className={linkClass}>
@@ -49,16 +54,20 @@ export default function Footer() {
           </a>
           <span className="text-[13px] text-[#eaf2f5]/40">{contact.location}</span>
           <div className="mt-1.5 flex gap-2.5">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                aria-label={social.ariaLabel}
-                className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-[9px] font-bold text-[#eaf2f5]/70 transition-all duration-200 hover:scale-110 hover:border-accent hover:text-accent active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[#000409]"
-              >
-                {social.label}
-              </a>
-            ))}
+            {socialLinks.map((social) => {
+              const isExternal = social.href.startsWith("http");
+              return (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.ariaLabel}
+                  {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-[9px] font-bold text-[#eaf2f5]/70 transition-all duration-200 hover:scale-110 hover:border-accent hover:text-accent active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[#000409]"
+                >
+                  {social.label}
+                </a>
+              );
+            })}
           </div>
         </Reveal>
       </div>
