@@ -65,8 +65,6 @@ export type Translations = {
     };
     contactHeading: string;
     rights: string;
-    terms: string;
-    privacy: string;
   };
   contact: {
     location: string;
@@ -125,8 +123,6 @@ const es: Translations = {
     },
     contactHeading: "CONTACTO",
     rights: "Todos los derechos reservados.",
-    terms: "Términos de Uso",
-    privacy: "Privacidad",
   },
   contact: {
     location: "Presencial - Remoto - Chile",
@@ -185,8 +181,6 @@ const en: Translations = {
     },
     contactHeading: "CONTACT",
     rights: "All rights reserved.",
-    terms: "Terms of Use",
-    privacy: "Privacy",
   },
   contact: {
     location: "On-site - Remote - Chile",
