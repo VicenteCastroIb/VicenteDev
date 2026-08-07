@@ -79,18 +79,10 @@ export default function Footer() {
         </Reveal>
       </div>
 
-      <div className="mx-auto flex max-w-[1200px] flex-wrap justify-between gap-3 border-t border-white/8 px-[clamp(20px,6vw,56px)] py-[22px] text-xs text-[#eaf2f5]/40">
+      <div className="mx-auto flex max-w-[1200px] justify-center border-t border-white/8 px-[clamp(20px,6vw,56px)] py-[22px] text-xs text-[#eaf2f5]/40">
         <span>
           © {year} Vicente Castro. {t.footer.rights}
         </span>
-        <div className="flex gap-[18px]">
-          <Link href="#" className="text-[#eaf2f5]/40 transition-colors duration-200 hover:text-accent focus-visible:text-accent focus-visible:outline-none">
-            {t.footer.terms}
-          </Link>
-          <Link href="#" className="text-[#eaf2f5]/40 transition-colors duration-200 hover:text-accent focus-visible:text-accent focus-visible:outline-none">
-            {t.footer.privacy}
-          </Link>
-        </div>
       </div>
     </footer>
   );
