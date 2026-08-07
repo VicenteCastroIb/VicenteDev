@@ -90,7 +90,7 @@ const es: Translations = {
   },
   about: {
     eyebrow: "QUIÉN SOY",
-    body: "Soy Vicente Castro, desarrollador full-stack. Diseño y construyo soluciones completas: desde bases de datos y APIs hasta interfaces que la gente disfruta usar. Combino bases técnicas sólidas con aprendizaje constante — actualmente profundizando en 4Geeks Academy — para construir productos confiables.",
+    body: "Soy Vicente Castro, desarrollador full-stack. Diseño y construyo soluciones completas: desde bases de datos y APIs hasta interfaces que la gente disfruta usar. Estudio Analista Programador en DUOC UC y completé un intensivo full-stack en 4Geeks Academy, combinando esa base técnica con aprendizaje constante para construir productos confiables.",
   },
   projects: {
     eyebrow: "EXPLORA MI TRABAJO",
@@ -150,7 +150,7 @@ const en: Translations = {
   },
   about: {
     eyebrow: "WHO I AM",
-    body: "I'm Vicente Castro, a full-stack developer. I design and build complete solutions: from databases and APIs to interfaces people enjoy using. I combine solid technical foundations with constant learning — currently deepening my skills at 4Geeks Academy — to build reliable products.",
+    body: "I'm Vicente Castro, a full-stack developer. I design and build complete solutions: from databases and APIs to interfaces people enjoy using. I'm studying Software Analysis at DUOC UC and completed an intensive full-stack program at 4Geeks Academy, combining that technical foundation with constant learning to build reliable products.",
   },
   projects: {
     eyebrow: "EXPLORE MY WORK",
